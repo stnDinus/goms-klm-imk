@@ -1,1 +1,102 @@
-Hello, world.
+\maketitle
+
+\section{Analisa GOMS dan KLM dalam Rancangan Aplikasi}
+
+\begin{info}{Catatan Penulis}
+  Semua rancangan aplikasi dalam subbab-subbab dari bab ini
+  merupakan aplikasi pribadi \textit{open source} dengan sumber kode
+  terbuka yang dapat diakses melalui alamat spesifik masing-masing aplikasi.
+\end{info}
+
+\subsection{Rancangan Aplikasi Pelacakan Port}
+
+Aplikasi ini merupakan situs web \url{https://phantomports.com} yang
+berfungsi untuk melacak port\footnote{
+  Port di jaringan komputer adalah identifikasi unik layanan atau
+  aplikasi dalam sebuah perangkat. (e.g. server web HTTP biasanya
+    berjalan di port \texttt{80}, sedangkan SSH biasanya berjalan di
+  port \texttt{22})
+}
+yang belum terdaftar pada daftar layanan IANA\footnote{
+  IANA (Internet Assigned Numbers Authority) adalah salah satu
+  lembaga standardisasi internet yang  menyimpan daftar port yang
+  telah digunakan oleh berbagai layanan di
+  \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=90}
+}.
+
+Tujuan utama dari aplikasi ini adalah untuk menyederhanakan proses
+pencarian port untuk pengembang aplikasi lain agar tidak terjadi
+pembentrokan port yang digunakan dengan aplikasi yang telah terdaftar
+di daftar IANA.
+
+Analisa model kognitif untuk aplikasi ini adalah proses pelacakan
+port yang dilakukan oleh pengguna aplikasi.
+
+\begin{info}{Catatan Penulis}
+  Aplikasi dapat diakses melalui situs web dengan alamat
+  \url{https://phantomports.com}. Sedangkan sumber kode berada di
+  \url{https://github.com/arsmoriendy/phantomports-front}.
+\end{info}
+
+\subsubsection{Analisa Model Kognitif GOMS}
+
+\begin{verbatim}
+GOAL: LACAK-PORT
+. [select GOAL: METODE-INPUT-BOX
+.         . FOKUS-INPUT-BOX
+.         . KETIK-PORT
+.         . [select GOAL: METODE-KUNCI
+.         .         . TEKAN-ENTER
+.         .         GOAL: METODE-TOMBOL
+.         .         . TEKAN-TOMBOL]
+.         GOAL: METODE-PARAMETER-QUERY
+.         . FOKUS-ALAMAT
+.         . KETIK-PREFIX
+.         . KETIK-PORT
+.         . TEKAN-ENTER]
+. VERIFIKASI-PORT
+\end{verbatim}
+
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\columnwidth}{llX}
+    \hline
+    \textbf{Nama} & \textbf{Tipe} & \textbf{Penjelasan} \\
+    \hline
+    \texttt{LACAK-PORT} & Goal & Melacak jika port tertentu telah
+    terdaftar pada daftar IANA \\
+    \texttt{METODE-INPUT-BOX} & Method & Tentukan port yang ingin
+    dilacak menggunakan kotak input port \\
+    \texttt{FOKUS-INPUT-BOX} & Operator & Pastikan fokus berada pada
+    kotak input port \\
+    \texttt{KETIK-PORT} & Operator & Ketik port yang ingin dilacak \\
+    \texttt{METODE-KUNCI} & Method & Tekan kunci keyboard tertentu
+    untuk mengeksekusi pencarian port yang telah ditentukan \\
+    \texttt{TEKAN-ENTER} & Operator & Tekan kunci \Enter pada keyboard \\
+    \texttt{METODE-TOMBOL} & Method & Tekan tombol untuk mengeksekusi
+    pencarian port yang telah ditentukan \\
+    \texttt{TEKAN-TOMBOL} & Operator & Tekan tombol "Search" \\
+    \texttt{METODE-PARAMETER-QUERY} & Method & Tentukan port yang ingin
+    dilacak melalui parameter query\footnotemark di \textit{address
+    bar}\footnotemark \\
+    \texttt{FOKUS-ALAMAT} & Operator & Pastikan fokus berada pada
+    \textit{address bar} \\
+    \texttt{KETIK-PREFIX} & Operator & Ketik bagian alamat awal (i.e.
+      sebelum nilai kunci parameter query port:
+    \texttt{https://phantomports.com/?port=}) \\
+    \texttt{VERIFIKASI-PORT} & Operator & Pastikan port yang
+    ditampilkan sesuai dengan yang dilacak \\
+  \end{tabularx}
+  \caption{Penjelasan GOMS aplikasi pencarian port}
+\end{table}
+
+\footnotetext[3]{
+  Terjemahan dari \textit{query parameter}, yaitu salah satu bagian
+  alamat situs web yang dapat menentukan identifikasi sumber daya
+  spesifik. Format dimulai dengan karakter \texttt{?} dan berisi
+  pasangan kunci dan nilai (e.g. untuk menyetel kunci parameter
+    \texttt{port} ke 22, pengguna dapat menuliskan alamat:
+  \texttt{https://phantomports.com/\fbox{?port=22}})
+}
+\footnotetext[4]{Kotak alamat situs web, yang biasanya terletak di
+bagian atas sebuah \textit{web browser}}
