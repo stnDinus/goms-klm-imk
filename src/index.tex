@@ -189,3 +189,93 @@ bagian atas sebuah \textit{web browser}}
   \end{tabularx}
   \caption{Model kognitif KLM untuk \texttt{LACAK-PORT}}
 \end{table}
+
+\section{Rancangan Aplikasi \textit{Cheatsheet} Tema Warna}
+
+Analisa selanjutnya akan dilakukan pada aplikasi
+\url{https://arsmoriendy.github.io/gruvbox-cheatsheet}. Situs web
+ini bertujuan untuk menyajikan beragam macam format kode warna (e.g.
+format RGB, HSL, HEX) dari tema warna bernama Gruvbox\footnote{
+  Tema warna Gruvbox berawal sebagi ekstensi tema warna untuk
+  program editor teks Vim \url{https://github.com/morhetz/gruvbox}
+}.
+
+\marginnote{
+  \faPalette\ Dokumen ini, serta semua aplikasi yang didiskusikan,
+  merupakan contoh implementasi tema warna Gruvbox
+}
+
+Pada aplikasi ini, terdapat fitur penyalinan kode-kode warna dalam
+bentuk JSON. Proses inilah yang akan dianalisa pada subbab-subbab selanjutnya.
+
+\begin{info}{Catatan Penulis}
+  Sumber kode aplikasi ini berada di repository GitHub berikut:
+  \url{https://github.com/arsmoriendy/gruvbox-cheatsheet}
+\end{info}
+
+\clearpage
+\subsection{Analisa Model Kognitif GOMS}
+
+\begin{verbatim}
+GOAL: SALIN-JSON
+. TEKAN-TOMBOL-DIALOG
+. [select GOAL: METODE-TOMBOL
+.         . TEKAN-TOMBOL-SALIN
+.         GOAL: METODE-HIGHLIGHT
+.         . HIGHLIGHT-JSON
+.         . [select GOAL: METODE-MENU
+.         .         . KLIK-KANAN
+.         .         . KLIK-SALIN
+.         .         GOAL: METODE-CTRL
+.         .         . TEKAN-CTRL-C]]
+\end{verbatim}
+
+\begin{gomsfig}
+  \begin{gomstbl}
+    \gomsrow{SALIN-JSON}G{
+      Salin kode-kode warna berbentuk JSON
+    }
+
+    \gomsrow{TEKAN-TOMBOL-DIALOG}O{
+      Tekan tombol (dengan simbol ``\verb`{}`'') untuk menampilkan
+      modal dialog kode-kode warna JSON
+    }
+
+    \gomsrow{METODE-TOMBOL}M{
+      Tekan tombol untuk menyalin JSON
+    }
+
+    \gomsrow{TEKAN-TOMBOL-SALIN}O{
+      Tekan tombol (dengan simbol ``\faCopy[regular]'') untuk menyalin JSON
+    }
+
+    \gomsrow{METODE-HIGHLIGHT}M{
+      \textit{Highlight} untuk menyalin seluruh kode JSON
+    }
+
+    \gomsrow{HIGHLIGHT-JSON}O{
+      \textit{Highlight} seluruh kode JSON
+    }
+
+    \gomsrow{METODE-MENU}M{
+      Gunakan menu konteks untuk menyalin teks
+    }
+
+    \gomsrow{KLIK-KANAN}O{
+      Tekan tombol kanan mouse
+    }
+
+    \gomsrow{KLIK-SALIN}O{
+      Tekan pilihan salin atau ``Copy'''
+    }
+
+    \gomsrow{METODE-CTRL}M{
+      Gunakan \textit{shortcut} keyboard yang berawal dengan \Ctrl
+    }
+
+    \gomsrow{TEKAN-CTRL-C}O{
+      Tekan \Ctrl{+}\keystroke{C} pada keyboard
+    }
+  \end{gomstbl}
+  \caption{Penjelasan GOMS aplikasi \textit{cheatsheet} tema warna}
+\end{gomsfig}
