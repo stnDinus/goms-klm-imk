@@ -21,9 +21,10 @@
 % package configs
 \graphicspath{{images/}}
 \pagestyle{fancy}
-\fancyhead{}
-\fancyhead[RE,RO]{\leftmark}
-\fancyhead[LE,LO]{\thepage}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+\fancyhead[L]{\textsl{\nouppercase\leftmark}}
+\fancyhead[R]{\rightmark}
 \definecolor{Accent}{RGB}{175,58,3}
 \definecolor{Info}{RGB}{7,102,120}
 \definecolor{Success}{RGB}{152,151,26}
