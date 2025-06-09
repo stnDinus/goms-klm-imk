@@ -55,29 +55,56 @@ GOAL: LACAK-PORT
 
 \begin{gomsfig}
   \begin{gomstbl}
-    \texttt{LACAK-PORT} & Goal & Melacak jika port tertentu telah
-    terdaftar pada daftar IANA \\
-    \texttt{METODE-INPUT-BOX} & Method & Tentukan port yang ingin
-    dilacak menggunakan kotak input port \\
-    \texttt{FOKUS-INPUT-BOX} & Operator & Pastikan fokus berada pada
-    kotak input port \\
-    \texttt{KETIK-PORT} & Operator & Ketik port yang ingin dilacak \\
-    \texttt{METODE-KUNCI} & Method & Tekan kunci keyboard tertentu
-    untuk mengeksekusi pencarian port yang telah ditentukan \\
-    \texttt{TEKAN-ENTER} & Operator & Tekan kunci \Enter pada keyboard \\
-    \texttt{METODE-TOMBOL} & Method & Tekan tombol untuk mengeksekusi
-    pencarian port yang telah ditentukan \\
-    \texttt{TEKAN-TOMBOL} & Operator & Tekan tombol ``Search'' \\
-    \texttt{METODE-PARAMETER-QUERY} & Method & Tentukan port yang ingin
-    dilacak melalui parameter query\footnotemark di \textit{address
-    bar}\footnotemark \\
-    \texttt{FOKUS-ALAMAT} & Operator & Pastikan fokus berada pada
-    \textit{address bar} \\
-    \texttt{KETIK-PREFIX} & Operator & Ketik bagian alamat awal (i.e.
-      sebelum nilai kunci parameter query port:
-    \texttt{https://phantomports.com/?port=}) \\
-    \texttt{VERIFIKASI-PORT} & Operator & Pastikan port yang
-    ditampilkan sesuai dengan yang dilacak \\
+    \gomsrow{LACAK-PORT}G{
+      Melacak jika port tertentu telah terdaftar pada daftar IANA
+    }
+
+    \gomsrow{METODE-INPUT-BOX}M{
+      Tentukan port yang ingin dilacak menggunakan kotak input port
+    }
+
+    \gomsrow{FOKUS-INPUT-BOX}O{
+      Pastikan fokus berada pada kotak input port
+    }
+
+    \gomsrow{KETIK-PORT}O{
+      Ketik port yang ingin dilacak
+    }
+
+    \gomsrow{METODE-KUNCI}M{
+      Tekan kunci keyboard tertentu untuk mengeksekusi pencarian port
+      yang telah ditentukan
+    }
+
+    \gomsrow{TEKAN-ENTER}O{
+      Tekan kunci \Enter pada keyboard
+    }
+
+    \gomsrow{METODE-TOMBOL}M{
+      Tekan tombol untuk mengeksekusi pencarian port yang telah ditentukan
+    }
+
+    \gomsrow{TEKAN-TOMBOL}O{
+      Tekan tombol ``Search''
+    }
+
+    \gomsrow{METODE-PARAMETER-QUERY}M{
+      Tentukan port yang ingin dilacak melalui parameter
+      query\footnotemark di \textit{address bar}\footnotemark
+    }
+
+    \gomsrow{FOKUS-ALAMAT}O{
+      Pastikan fokus berada pada \textit{address bar}
+    }
+
+    \gomsrow{KETIK-PREFIX}O{
+      Ketik bagian alamat awal (i.e. sebelum nilai kunci parameter
+      query port: \texttt{https://phantomports.com/?port=})
+    }
+
+    \gomsrow{VERIFIKASI-PORT}O{
+      Pastikan port yang ditampilkan sesuai dengan yang dilacak
+    }
   \end{gomstbl}
   \caption{Penjelasan GOMS aplikasi pencarian port}
 \end{gomsfig}

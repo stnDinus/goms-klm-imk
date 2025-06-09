@@ -71,6 +71,17 @@
 }{
   \endtabularx
 }
+\newcommand{\gomsrow}[3]{
+  \texttt{#1} &
+  \if#2G
+  Goal
+  \else\if#2O
+  Operator
+  \else\if#2M
+  Method
+  \fi\fi\fi &
+  #3 \\
+}
 
 % frontmatter
 \title{
