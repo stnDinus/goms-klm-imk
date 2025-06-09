@@ -82,6 +82,27 @@
   \fi\fi\fi &
   #3 \\
 }
+\newenvironment{klmtbl}[1]{
+  \tabularx\columnwidth{#1}
+  \hline
+}{
+  \hline
+  \endtabularx
+}
+\newcommand\klmhead[1]{
+  \textbf{\texttt{#1}}
+}
+\newcommand\klmtotal[1]{
+  \textbf{Total} & #1 detik
+}
+\newcommand\klmheader[1]{
+  #1 \\
+  \hline
+}
+\newcommand\klmfooter[1]{
+  \hline
+  #1 \\
+}
 
 % frontmatter
 \title{

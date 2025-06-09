@@ -123,31 +123,31 @@ bagian atas sebuah \textit{web browser}}
 \subsection{Analisa Model Kognitif KLM}
 
 \begin{chtbl}
-  \begin{tabularx}{\columnwidth}{lXlX}
-    \hline
-    \multicolumn{2}{c}{\textbf{\texttt{METODE-KUNCI}}} &
-    \multicolumn{2}{c}{\textbf{\texttt{METODE-TOMBOL}}} \\
-    \hline
+  \begin{klmtbl}{lXlX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{METODE-KUNCI}} &
+      \multicolumn{2}{c}{\klmhead{METODE-TOMBOL}}
+    }
 
     H[keyboard] & $0.4$ & H[mouse] & $0.4$ \\
     K[\Enter] & $0.1$ & P[ke tombol ``Search''] & $0.5$ \\
     && B[tekan kiri] & $0.1$ \\
 
-    \hline
-    \textbf{Total} & $0.5$ detik & \textbf{Total} & $1.0$ detik \\
-    \hline
-  \end{tabularx}
+    \klmfooter{
+      \klmtotal{$0.5$} & \klmtotal{$1.0$}
+    }
+  \end{klmtbl}
   \caption{Perbandingan model kognitif KLM antara
     \texttt{METODE-KUNCI} dengan asumsi posisi tangan berawal di mouse,
   dan \texttt{METODE-TOMBOL} dengan asumsi posisi tangan berawal di keyboard}
 \end{chtbl}
 
 \begin{chtbl}
-  \begin{tabularx}{\columnwidth}{lXlX}
-    \hline
-    \multicolumn{2}{c}{\textbf{\texttt{METODE-INPUT-BOX}}} &
-    \multicolumn{2}{c}{\textbf{\texttt{METODE-PARAMETER-QUERY}}} \\
-    \hline
+  \begin{klmtbl}{lXlX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{METODE-INPUT-BOX}} &
+      \multicolumn{2}{c}{\klmhead{METODE-PARAMETER-QUERY}}
+    }
 
     H[mouse] & $0.4$ & H[mouse] & $0.4$ \\
     P[kotak input] & $0.5$ & P[\textit{address bar}] & $0.5$ \\
@@ -158,11 +158,10 @@ bagian atas sebuah \textit{web browser}}
     & & K[port] & $0.2$ - $1.0$ \\
     & & K[\Enter] & $0.1$ \\
 
-    \hline
-    \textbf{Total} & $1.7$ - $3.0$ detik & \textbf{Total} & $5.0$ -
-    $11.8$ detik \\
-    \hline
-  \end{tabularx}
+    \klmfooter{
+      \klmtotal{$1.7$ - $3.0$} & \klmtotal{$5.0$ - $11.8$}
+    }
+  \end{klmtbl}
   \caption{Perbandingan model kognitif KLM antara
     \texttt{METODE-INPUT-BOX} dan \texttt{METODE-PARAMETER-QUERY} dengan asumsi
     posisi tangan berawal di keyboard dan pengguna telah berada di
@@ -170,20 +169,20 @@ bagian atas sebuah \textit{web browser}}
 \end{chtbl}
 
 \begin{chtbl}
-  \begin{tabularx}{\columnwidth}{lX}
-    \hline
-    \multicolumn{2}{c}{\textbf{\texttt{LACAK-PORT}}} \\
-    \hline
+  \begin{klmtbl}{lX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{LACAK-PORT}}
+    }
 
     \makecell{\texttt{METODE-INPUT-BOX}/\\\texttt{METODE-PARAMETER-QUERY}}
     & $1.7$ - $11.8$ \\
     R & $0.1$ - $5$ \\
     M[verifikasi] & $0.4$ \\
 
-    \hline
-    \textbf{Total} & $2.2$ - $17.2$ detik \\
-    \hline
-  \end{tabularx}
+    \klmfooter{
+      \klmtotal{$2.2$ - $17.2$}
+    }
+  \end{klmtbl}
   \caption{Model kognitif KLM untuk \texttt{LACAK-PORT}}
 \end{chtbl}
 
