@@ -53,12 +53,8 @@ GOAL: LACAK-PORT
 . VERIFIKASI-PORT
 \end{verbatim}
 
-\begin{table}[H]
-  \centering
-  \begin{tabularx}{\columnwidth}{llX}
-    \hline
-    \textbf{Nama} & \textbf{Tipe} & \textbf{Penjelasan} \\
-    \hline
+\begin{gomsfig}
+  \begin{gomstbl}
     \texttt{LACAK-PORT} & Goal & Melacak jika port tertentu telah
     terdaftar pada daftar IANA \\
     \texttt{METODE-INPUT-BOX} & Method & Tentukan port yang ingin
@@ -82,9 +78,9 @@ GOAL: LACAK-PORT
     \texttt{https://phantomports.com/?port=}) \\
     \texttt{VERIFIKASI-PORT} & Operator & Pastikan port yang
     ditampilkan sesuai dengan yang dilacak \\
-  \end{tabularx}
+  \end{gomstbl}
   \caption{Penjelasan GOMS aplikasi pencarian port}
-\end{table}
+\end{gomsfig}
 
 \footnotetext[3]{
   Terjemahan dari \textit{query parameter}, yaitu salah satu bagian

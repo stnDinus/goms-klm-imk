@@ -16,6 +16,7 @@
   tabularx,
   makecell,
   keystroke,
+  marginnote,
   fontawesome5,
 }
 
@@ -41,6 +42,7 @@
 }
 % (makecell) set cells vertically top and horizontally centered
 \renewcommand{\cellalign}{tl}
+\renewcommand\marginfont{\footnotesize\color{Purple}}
 
 % user commands and environments
 \newenvironment{info}[1]{
@@ -54,6 +56,20 @@
     ]
   }{
   \end{tcolorbox}
+}
+\newenvironment{gomsfig}{
+  \begin{table}[H]
+  }{
+    \centering
+  \end{table}
+}
+\newenvironment{gomstbl}{
+  \tabularx{\columnwidth}{llX}
+  \hline
+  \textbf{Nama} & \textbf{Tipe} & \textbf{Penjelasan} \\
+  \hline
+}{
+  \endtabularx
 }
 
 % frontmatter
