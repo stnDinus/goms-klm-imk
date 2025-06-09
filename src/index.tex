@@ -169,7 +169,7 @@ bagian atas sebuah \textit{web browser}}
 \end{chtbl}
 
 \begin{chtbl}
-  \begin{klmtbl}{lX}
+  \begin{klmtbl}{XX}
     \klmheader{
       \multicolumn{2}{c}{\klmhead{LACAK-PORT}}
     }
@@ -274,4 +274,77 @@ GOAL: SALIN-JSON
     }
   \end{gomstbl}
   \caption{Penjelasan GOMS aplikasi \textit{cheatsheet} tema warna}
+\end{chtbl}
+
+\clearpage
+\subsection{Analisa Model Kognitif KLM}
+
+\begin{chtbl}
+  \begin{klmtbl}{lXlX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{METODE-CTRL}} &
+      \multicolumn{2}{c}{\klmhead{METODE-MENU}}
+    }
+
+    H[keyboard] & $0.4$ & B[tekan kanan] & $0.1$ \\
+    K[\Ctrl{+}\keystroke{c}] & $0.3$ & P[ke pilihan ``Copy''] & $0.7$ \\
+    & & B[tekan kiri] & $0.1$ \\
+
+    \klmfooter{
+      \klmtotal{$0.7$} & \klmtotal{$0.9$}
+    }
+  \end{klmtbl}
+  \caption{Perbandingan model kognitif KLM antara
+    \texttt{METODE-CTRL} dengan \texttt{METODE-MENU} dengan asumsi
+    posisi tangan pengguna berawal di mouse, setelah melewati metode
+  \texttt{METODE-HIGHLIGHT}}
+\end{chtbl}
+
+\begin{chtbl}
+  \begin{klmtbl}{lXlX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{METODE-TOMBOL}} &
+      \multicolumn{2}{c}{\klmhead{METODE-HIGHLIGHT}}
+    }
+
+    P[tombol ``\faCopy[regular]''] & $0.3$ & P[awal kode JSON] & $0.3$ \\
+    B[tekan kiri] & $0.1$ & B[tekan kiri] & $0.1$ \\
+    & & D[akhir kode JSON] & $1.4$ \\
+    & & \makecell{
+      \texttt{METODE-CTRL}/\\\texttt{METODE-MENU}
+    } & $0.7$ - $0.9$ \\
+
+    \klmfooter{
+      \klmtotal{$0.4$} & \klmtotal{$2.5$ - $2.7$}
+    }
+  \end{klmtbl}
+  \caption{
+    Perbandingan model kognitif KLM antara \texttt{METODE-TOMBOL}
+    dengan \texttt{METODE-HIGHLIGHT} dengan asumsi posisi tangan
+    pengguna berawal di mouse, setelah melakukan operasi
+    \texttt{TEKAN-TOMBOL-DIALOG}
+  }
+\end{chtbl}
+
+\begin{chtbl}
+  \begin{klmtbl}{XX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{SALIN-JSON}}
+    }
+
+    P[tombol dialog ``\verb`{}`''] & $0.2$ \\
+    B[tekan kiri] & $0.1$ \\
+    \makecell{
+      \texttt{METODE-TOMBOL}/\\
+      \texttt{METODE-HIGHLIGHT}
+    } & $0.4$ - $2.7$ \\
+
+    \klmfooter{
+      \klmtotal{$0.7$ - $3.0$}
+    }
+  \end{klmtbl}
+  \caption{
+    Model kognitif KLM \texttt{SALIN-JSON} dengan asumsi posisi
+    tangan pengguna berawal di mouse
+  }
 \end{chtbl}
