@@ -351,3 +351,129 @@ GOAL: SALIN-JSON
     tangan pengguna berawal di mouse
   }
 \end{chtbl}
+
+\clearpage
+\subsection{Proses Penggantian Tema}
+Analisa selanjutnya yang dilakukan pada aplikasi ini merupakan fitur
+proses penggantian tema gelap/terang. Terdapat 3 pilihan tema pada
+aplikasi ini, yaitu
+\begin{enumerate}
+  \item ``System'' --- tema default aplikasi, mengikuti penyetelan
+    tema gelap/terang dari browser pengguna
+  \item ``Light'' --- tema terang
+  \item ``Dark'' --- tema gelap
+\end{enumerate}
+Untuk analisa dari proses ini, diasumsikan tema pengguna berawal
+dengan tema default (i.e. ``System'').
+
+\subsubsection{Analisa Model Kognitif GOMS}
+
+\begin{verbatim}
+GOAL: GANTI-TEMA
+. [select GOAL: METODE-KEYBOARD
+.         . TAB-SETTING
+.         . TEKAN-ENTER
+.         . TAB-DROPDOWN
+.         . TEKAN-ENTER
+.         . ARROW-TEMA
+.         . TEKAN-ENTER
+.         GOAL: METODE-MOUSE
+.         . TEKAN-SETTING
+.         . TEKAN-DROPDOWN
+.         . TEKAN-TEMA]
+\end{verbatim}
+
+\begin{chtbl}
+  \begin{gomstbl}
+    \gomsrow{GANTI-TEMA}G{
+      Ganti tema terang/gelap aplikasi
+    }
+
+    \gomsrow{METODE-KEYBOARD}M{
+      Gunakan keyboard untuk mengganti tema
+    }
+
+    \gomsrow{TAB-SETTING}O{
+      Tekan \Tab hingga fokus berada di tombol ``Settings''
+    }
+
+    \gomsrow{TEKAN-ENTER}O{
+      Tekan \Enter pada keyboard
+    }
+
+    \gomsrow{TAB-DROPDOWN}O{
+      Tekan \Tab hingga fokus berada di tombol \textit{dropdown} ``theme''
+    }
+
+    \gomsrow{ARROW-TEMA}O{
+      Tekan \UArrow atau \DArrow pada keyboard hingga fokus berada
+      pada tema yang diinginkan
+    }
+
+    \gomsrow{METODE-MOUSE}M{
+      Gunakan mouse untuk mengganti tema
+    }
+
+    \gomsrow{TEKAN-SETTING}O{
+      Tekan tombol ``Settings''
+    }
+
+    \gomsrow{TEKAN-DROPDOWN}O{
+      Tekan tombol \textit{dropdown} ``theme''
+    }
+
+    \gomsrow{TEKAN-TEMA}O{
+      Tekan pilihan tema yang diinginkan
+    }
+  \end{gomstbl}
+\end{chtbl}
+
+\clearpage
+\subsubsection{Analisa Model Kognitif KLM}
+\begin{chtbl}
+  \begin{klmtbl}{lXlX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{METODE-KEYBOARD}} &
+      \multicolumn{2}{c}{\klmhead{METODE-MOUSE}}
+    }
+
+    H[keyboard] & $0.4$ & H[mouse] & $0.4$ \\
+    K[\Tab setting] & $1.3$ & P[setting] & $0.5$ \\
+    K[\Enter] & $0.1$ & B[tekan kiri] & $0.1$ \\
+    K[\Tab dropdown] & $1.6$ & P[dropdown] & $0.5$ \\
+    K[arrow] & $0.7$ & B[tekan kiri] & $0.1$ \\
+    K[\Enter] & $0.1$ & P[tema] & $0.3$ \\
+
+    \klmfooter{
+      \klmtotal{$4.2$} & \klmtotal{$1.9$}
+    }
+  \end{klmtbl}
+
+  \caption{
+    Perbandingan model kognitif KLM untuk
+    \texttt{METODE-KEYBOARD} dengan asumsi tangan pengguna berawal di
+    mouse, dan \texttt{METODE-MOUSE} dengan asumsi tangan pengguna
+    berawal di keyboard
+  }
+\end{chtbl}
+
+\begin{chtbl}
+  \begin{klmtbl}{XX}
+    \klmheader{
+      \multicolumn{2}{c}{\klmhead{GANTI-TEMA}}
+    }
+
+    \makecell{
+      \texttt{METODE-KEYBOARD}/\\
+      \texttt{METODE-MOUSE}
+    } & $1.9$ - $4.2$ \\
+
+    \klmfooter{
+      \klmtotal{$1.9$ - $4.2$}
+    }
+  \end{klmtbl}
+
+  \caption{
+    Model kognitif KLM untuk \texttt{GANTI-TEMA}
+  }
+\end{chtbl}
